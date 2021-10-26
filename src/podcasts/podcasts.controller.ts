@@ -48,8 +48,8 @@ export class PodcastsController {
   }
 
   @Post('/:id/episodes')
-  createEpisodes(@Body() episodeData) {
-    return this.podcastsService.createEpisode(episodeData);
+  createEpisodes(@Param('id') podcastId: string, @Body() episodeData) {
+    return this.podcastsService.createEpisode(podcastId, episodeData);
   }
 
   @Patch('/:id/episodes/:episodeId')
